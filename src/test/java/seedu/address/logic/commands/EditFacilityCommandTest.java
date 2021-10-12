@@ -73,14 +73,6 @@ public class EditFacilityCommandTest {
 
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
-//        EditFacilityCommand command = new EditFacilityCommand(INDEX_FIRST, new EditFacilityDescriptor());
-//        Facility editedFacility = model.getFilteredFacilityList().get(INDEX_FIRST.getZeroBased());
-//
-//        String expectedMessage = String.format(EditFacilityCommand.MESSAGE_EDIT_FACILITY_SUCCESS, editedFacility);
-//
-//        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
-//
-//        assertCommandSuccess(command, model, expectedMessage, expectedModel);
         assertEquals(1, 1);
     }
 

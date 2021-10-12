@@ -1,6 +1,5 @@
 package seedu.address.logic.commands;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_FACILITY_NAME_COURT;
@@ -73,7 +72,13 @@ public class EditFacilityCommandTest {
 
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
-        assertEquals(1, 1);
+        EditFacilityCommand command = new EditFacilityCommand(INDEX_FIRST, new EditFacilityDescriptor());
+        Facility editedFacility = model.getFilteredFacilityList().get(INDEX_FIRST.getZeroBased());
+
+        String expectedMessage = String.format(EditFacilityCommand.MESSAGE_EDIT_FACILITY_SUCCESS, editedFacility);
+
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
 
     @Test
